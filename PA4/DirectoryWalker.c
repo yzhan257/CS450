@@ -11,10 +11,8 @@ void walker(char *basedir){
 	dir = opendir(basedir);
 
 	if(dir != NULL){
-		printf("\nCurrent Directory: \"%s\"\n", basedir);
-
 		while((dEnt = readdir(dir)) != NULL){
-			char entpath[] = "";
+			char entpath[100] = "";
 			strcat(entpath, basedir);
 			strcat(entpath, "\\");
 			strcat(entpath, dEnt->d_name);
