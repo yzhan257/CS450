@@ -30,11 +30,11 @@ void walker(char *basedir){
 			strcat(entpath, dEnt->d_name);
 
 			if(isDir(entpath)==1){
-				printf("\nDIR: %s\n", dEnt->d_name);
+				printf("\nDIR: %lu\n", dEnt->d_ino);
 				walker(entpath);
 			}
 			else{
-				printf("\nFILE: %s\n", dEnt->d_name);
+				printf("\nFILE: %lu\n", dEnt->d_ino);
 			}
 		}
 		closedir(dir);
